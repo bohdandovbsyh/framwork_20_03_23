@@ -1,6 +1,8 @@
 import configparser
 
-abs_path = '/home/bohdandovbysh/PycharmProjects/pythonProject4/configurations/configuration.ini'
+from constants import ROOT_DIR
+
+abs_path = f'{ROOT_DIR}/configurations/configuration.ini'
 config = configparser.RawConfigParser()
 config.read(abs_path)
 
@@ -16,3 +18,11 @@ def get_user_creds():
 
 def get_browser_id():
     return config.get('browser_data', 'browser_id')
+
+
+def get_headless_status():
+    result = config.get('browser_data', 'headless')
+    if result in ['True', 'true', '1']:
+        return True
+    else:
+        return False

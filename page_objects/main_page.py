@@ -12,9 +12,9 @@ class DashboardPage(BasePage):
     __nav_bar = (By.XPATH, "//*[@id='navbarText']")
     __start_accepting_orders_card = (By.XPATH, "//div[@id='configuration-steps-card']//h3")
 
-    # def is_navigation_bar_displayed(self):
-    #     nav_bar_element = self.__wait.until(EC.visibility_of_element_located(self.__nav_bar))
-    #     return nav_bar_element.is_displayed(self.__nav_bar)
+    def is_navigation_bar_displayed(self):
+         nav_bar_element = self.__wait.until(EC.visibility_of_element_located(self.__nav_bar))
+         return nav_bar_element.is_displayed(self.__nav_bar)
 
     def get_start_accepting_orders_card_text(self):
         return self._get_text(self.__start_accepting_orders_card)

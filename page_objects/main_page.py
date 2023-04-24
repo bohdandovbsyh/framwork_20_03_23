@@ -8,6 +8,7 @@ from utilities.web_ui.base_page import BasePage
 class DashboardPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
+        self.__wait = WebDriverWait(self.driver, 10, 1)
 
     __nav_bar = (By.XPATH, "//*[@id='navbarText']")
     __start_accepting_orders_card = (By.XPATH, "//div[@id='configuration-steps-card']//h3")
